@@ -48,11 +48,11 @@ public class Pila extends ListaEnlazadaSimple{
         while(recorrido != null){
             if((int)recorrido.getDato()!= (int)dato){
                 eliminarInicio();
-                tamanio--;
+                
                 recorrido = recorrido.getSiguiente();
             }else{
                 eliminarInicio();
-                tamanio--;
+                
                 return;
             }
         }
