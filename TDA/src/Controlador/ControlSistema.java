@@ -10,6 +10,8 @@ import Vista.ListaEnlazada;
 import Vista.ListaEnlazadaBD;
 import Vista.PanelControl;
 import Vista.Recursivos;
+import Vista.ColaVista;
+import Vista.PilaVista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +26,8 @@ public class ControlSistema implements ActionListener{
     private Recursivos ventanaRecursivos;
     private ListaEnlazada ventanaListaEnlazada;
     private ListaEnlazadaBD ventanaListaEnlazadaBD;
+    private ColaVista ventanaCola;
+    private PilaVista ventanaPila;
     
     public ControlSistema(){
         
@@ -31,17 +35,21 @@ public class ControlSistema implements ActionListener{
     
     public ControlSistema(PanelControl ventanaPrincipal, Iterativos ventanaIterativos, 
                           ListaEnlazada ventanaListaEnlazada, Recursivos ventanaRecursivos,
-                          ListaEnlazadaBD ventanaListaEnlazadaBD){
+                          ListaEnlazadaBD ventanaListaEnlazadaBD, ColaVista ventanaCola, PilaVista ventanaPila){
         this.ventanaPrincipal = ventanaPrincipal;
         this.ventanaIterativos = ventanaIterativos;
         this.ventanaRecursivos = ventanaRecursivos;
         this.ventanaListaEnlazada = ventanaListaEnlazada;
         this.ventanaListaEnlazadaBD = ventanaListaEnlazadaBD;
+        this.ventanaCola = ventanaCola;
+        this.ventanaPila = ventanaPila;
         this.ventanaPrincipal.menuItemIterativos.addActionListener(this);
         this.ventanaPrincipal.menuItemRecursivos.addActionListener(this);
         this.ventanaPrincipal.menuItemListaEnlazada.addActionListener(this);
         this.ventanaPrincipal.menuItemSalir.addActionListener(this);
         this.ventanaPrincipal.menuItemListaEnlazadaBD.addActionListener(this);
+        this.ventanaPrincipal.menuItemCola.addActionListener(this);
+        this.ventanaPrincipal.menuItemPila.addActionListener(this);
     }
     
     public void iniciar() {
@@ -66,6 +74,12 @@ public class ControlSistema implements ActionListener{
         }else if(event.getSource() == ventanaPrincipal.menuItemListaEnlazadaBD){
             ventanaPrincipal.dpEscritorio.add(ventanaListaEnlazadaBD);
             ventanaListaEnlazadaBD.show();
+        }else if(event.getSource() == ventanaPrincipal.menuItemCola){
+            ventanaPrincipal.dpEscritorio.add(ventanaCola);
+            ventanaCola.show();
+        }else if(event.getSource() == ventanaPrincipal.menuItemPila){
+            ventanaPrincipal.dpEscritorio.add(ventanaPila);
+            ventanaPila.show();
         }
     }
 }

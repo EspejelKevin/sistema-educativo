@@ -36,6 +36,8 @@ public class PanelControl extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         menuItemListaEnlazada = new javax.swing.JMenuItem();
         menuItemListaEnlazadaBD = new javax.swing.JMenuItem();
+        menuItemCola = new javax.swing.JMenuItem();
+        menuItemPila = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         menuItemSalir = new javax.swing.JMenuItem();
 
@@ -107,6 +109,14 @@ public class PanelControl extends javax.swing.JFrame {
             }
         });
         jMenu2.add(menuItemListaEnlazadaBD);
+
+        menuItemCola.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        menuItemCola.setText("Cola");
+        jMenu2.add(menuItemCola);
+
+        menuItemPila.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        menuItemPila.setText("Pila");
+        jMenu2.add(menuItemPila);
 
         jMenuBar1.add(jMenu2);
 
@@ -196,9 +206,11 @@ public class PanelControl extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     public javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuItem menuItemCola;
     public javax.swing.JMenuItem menuItemIterativos;
     public javax.swing.JMenuItem menuItemListaEnlazada;
     public javax.swing.JMenuItem menuItemListaEnlazadaBD;
+    public javax.swing.JMenuItem menuItemPila;
     public javax.swing.JMenuItem menuItemRecursivos;
     public javax.swing.JMenuItem menuItemSalir;
     public javax.swing.JMenu menuSalir;

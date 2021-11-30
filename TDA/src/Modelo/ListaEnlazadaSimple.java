@@ -22,19 +22,20 @@ public class ListaEnlazadaSimple {
     }
 
     public void insertarInicio(Object dato) {
-        Nodo nuevo = new Nodo(dato, this.primero);
+        Nodo nuevo = new Nodo(dato, this.primero); // 
         this.primero = nuevo;
         numElementos++;
     }
 
     public void insertarFinal(Object dato) {
         Nodo nuevo = new Nodo(dato, null);
-        if (this.primero == null) {
+        if (this.primero == null) { // no hay nodos en la lista
             this.primero = nuevo;
         } else {
             Nodo actual = this.primero;
             while (actual.getSiguiente() != null) {
                 actual = actual.getSiguiente();
+                //actual = nodo 4
             }
             actual.setSiguiente(nuevo);
             numElementos++;
@@ -122,9 +123,11 @@ public class ListaEnlazadaSimple {
         }
     }
 
-    public void eliminarInicio() {
+    public int eliminarInicio() {
+        int auxiliar = (int) this.primero.getDato();
         this.primero = this.primero.getSiguiente();
         numElementos--;
+        return auxiliar;
     }
 
     public void eliminarFinal() {
@@ -147,13 +150,13 @@ public class ListaEnlazadaSimple {
             Nodo actual = this.primero;
             while (actual.getSiguiente() != null) {
                 salida+=actual.getDato()+"     ";
-                actual = actual.getSiguiente();
+                actual = actual.getSiguiente();   
             }
             salida+=actual.getDato();
         } catch (Exception e) {
             salida = "No has insertado elementos";
         }
-        return salida;
+        return salida; // 10     5
     }
 
     public int tamanioLista() {
@@ -162,8 +165,9 @@ public class ListaEnlazadaSimple {
     
     public static void main(String[] args) {
         ListaEnlazadaSimple l = new ListaEnlazadaSimple();
-        l.insertarFinal(5);
-        l.insertarFinal(10);
+        l.insertarCualquierPosicion(0, 5);
+        
+
         System.out.println(l.listar());
     }
 }
