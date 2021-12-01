@@ -45,7 +45,8 @@ public class PilaVista extends javax.swing.JInternalFrame {
         txtDatoPop = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txtDatosPila = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDatosPila = new javax.swing.JTextArea();
 
         setClosable(true);
         setIconifiable(true);
@@ -170,13 +171,10 @@ public class PilaVista extends javax.swing.JInternalFrame {
         jPanel2.setName(""); // NOI18N
 
         txtDatosPila.setBackground(new java.awt.Color(255, 255, 102));
+        txtDatosPila.setColumns(20);
         txtDatosPila.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtDatosPila.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtDatosPila.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDatosPilaActionPerformed(evt);
-            }
-        });
+        txtDatosPila.setRows(5);
+        jScrollPane1.setViewportView(txtDatosPila);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -184,14 +182,14 @@ public class PilaVista extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtDatosPila, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtDatosPila, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -211,27 +209,24 @@ public class PilaVista extends javax.swing.JInternalFrame {
                     .addComponent(rbtnTope)
                     .addComponent(rbtnMostrarPila)
                     .addComponent(btnEjecutar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtDatoPop, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel6)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtDatoPop, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtDatoPush, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel5))))
-                        .addGap(36, 36, 36))))
+                                    .addComponent(txtDatoPush, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel5))))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,9 +265,9 @@ public class PilaVista extends javax.swing.JInternalFrame {
                             .addComponent(txtDatoPop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
-                        .addGap(31, 31, 31)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -325,10 +320,6 @@ public class PilaVista extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDatoPopActionPerformed
 
-    private void txtDatosPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDatosPilaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDatosPilaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnEjecutar;
@@ -340,6 +331,7 @@ public class PilaVista extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JRadioButton rbtnMostrarPila;
     public javax.swing.JRadioButton rbtnPop;
     public javax.swing.JRadioButton rbtnPopCualquiera;
@@ -349,6 +341,6 @@ public class PilaVista extends javax.swing.JInternalFrame {
     public javax.swing.JRadioButton rbtnVaciarPila;
     public javax.swing.JTextField txtDatoPop;
     public javax.swing.JTextField txtDatoPush;
-    public javax.swing.JTextField txtDatosPila;
+    public javax.swing.JTextArea txtDatosPila;
     // End of variables declaration//GEN-END:variables
 }

@@ -78,7 +78,7 @@ public class Pila extends ListaEnlazadaSimple{
     public String mostrarPila(){
         Nodo recorrido = ultimo;
         while(recorrido != null){
-            pila += recorrido.getDato() + "\n";
+            pila += "\t  " + recorrido.getDato() + "\n";
             recorrido = recorrido.getSiguiente();
         }
         String pilaDatos = pila;
